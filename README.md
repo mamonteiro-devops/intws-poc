@@ -9,9 +9,6 @@ export AWS_ACCESS_KEY_ID=AKIA3HQ7JY3CXKSEFIMJ
 export AWS_SECRET_ACCESS_KEY=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
 export AWS_REGION=us-east-1
 
-rm -rf terraform.tfstate .terraform .terraform.lock.hcl terraform.tfstate.backup
-
-
 #Instruction to run the project 
 
 cd /home/mamonteiro/challenge/intws-poc/steel-eye-nginx-ingress-controller
