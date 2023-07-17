@@ -3,26 +3,28 @@
 ```
     export AWS_ACCESS_KEY_ID=<ACCESS_KEY>
     export AWS_SECRET_ACCESS_KEY=<SECRET_KEY>
-    export AWS_REGION=<REGION>
-    
-    export AWS_ACCESS_KEY_ID=AKIA6L6J4C62A5QKINNN
-    export AWS_SECRET_ACCESS_KEY=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
-    export AWS_REGION=us-east-1
+    export AWS_REGION=<REGION>  
 ```
 
 
-### Instruction to run the project 
-```
-    cd /home/mamonteiro/challenge/intws-poc/steel-eye-nginx-ingress-controller
-```
+### intws-poc
+    [steel-eye-aws-preconfig]     - Create the S3 and DynamoDB table to control remote state \
+    [steel-eye-terraform-backend] - Terraform module to provision an S3 bucket to store terraform.tfstate file and a DynamoDB table to lock the state file to prevent concurrent modifications and state corruption. \
+    [steel-eye-nginx-ingress-controller] - project implementation
 
 ### Initialize configurations to install the providers it references.
 ```
-    terraform init
-    terraform plan -out=tf.plan
-    terraform apply -auto-approve
-
-    terraform dastroy -auto-approve
+    cd steel-eye-aws-preconfig
+        terraform init
+        terraform apply -auto-approve
+        
+    cd steel-eye-terraform-backend
+        terraform init
+        terraform apply -auto-approve
+        
+    cd steel-eye-nginx-ingress-controller
+        terraform init
+        terraform apply -auto-approve
 ```
 
 ### update the kubeconfig file for an Amazon Elastic Kubernetes Service (EKS) cluster in the specified AWS region
