@@ -33,3 +33,13 @@
     aws eks update-kubeconfig --region us-east-1 --name steel-eye-eks
 ```
 
+
+### Some useful commands
+```
+kubectl -n kube-system get deploy
+kubectl -n kube-system describe deploy <aws-load-balancer-controller>
+kubectl -n kube-system get pods
+
+kubectl -n kube-system get svc
+
+```
