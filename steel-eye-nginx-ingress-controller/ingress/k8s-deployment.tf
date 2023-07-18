@@ -1,6 +1,6 @@
-resource "kubernetes_deployment" "example_deployment" {
+resource "kubernetes_deployment" "example_deployment_lb" {
   metadata {
-    name = "example-deployment"
+    name = "deployment-lb"
   }
 
   spec {
@@ -8,14 +8,46 @@ resource "kubernetes_deployment" "example_deployment" {
 
     selector {
       match_labels = {
-        app = "steel-eye-app"
+        app = "steel-eye-app-lb"
       }
     }
 
     template {
       metadata {
         labels = {
-          app = "steel-eye-app"
+          app = "steel-eye-app-lb"
+        }
+      }
+
+      spec {
+        container {
+          image = "hashicorp/http-echo"
+          name  = "simple-steel-eye-app2"
+          args  = ["-text=Hello from my simple-steel-eye-app2"]
+        }
+      }
+    }
+  }
+}
+
+resource "kubernetes_deployment" "example_deployment_ing" {
+  metadata {
+    name = "deployment-ing"
+  }
+
+  spec {
+    replicas = 4
+
+    selector {
+      match_labels = {
+        app = "steel-eye-app-ing"
+      }
+    }
+
+    template {
+      metadata {
+        labels = {
+          app = "steel-eye-app-ing"
         }
       }
 
