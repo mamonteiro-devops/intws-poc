@@ -5,6 +5,8 @@
     export AWS_SECRET_ACCESS_KEY=<SECRET_KEY>
     export AWS_REGION=<REGION>  
     
+    Note: the aws account must be replaced in steel-eye-terraform-backend/live/steel-eye/main.tf
+    
 ```
 
 
