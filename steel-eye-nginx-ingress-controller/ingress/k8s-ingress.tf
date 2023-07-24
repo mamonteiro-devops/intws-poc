@@ -10,7 +10,19 @@ resource "kubernetes_ingress_v1" "ingress-deployment" {
         path {
           backend {
             service {
-              name = "deployment-steel-eye-app2-service"
+              name = "steel-eye-app1-service"
+              port {
+                number = 5678
+              }
+            }
+          }
+          path = "/app1"
+        }
+
+        path {
+          backend {
+            service {
+              name = "steel-eye-app2-service"
               port {
                 number = 5678
               }
@@ -22,3 +34,4 @@ resource "kubernetes_ingress_v1" "ingress-deployment" {
     }
   }
 }
+
