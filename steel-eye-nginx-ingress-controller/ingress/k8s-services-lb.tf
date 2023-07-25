@@ -9,7 +9,7 @@ resource "kubernetes_service_v1" "service-lb" {
       app = kubernetes_deployment.example_deployment_lb.spec.0.selector.0.match_labels.app
     }
     port {
-      port = 5678
+      port = 5677
     }
     type = "LoadBalancer"
   }

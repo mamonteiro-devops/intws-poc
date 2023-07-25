@@ -23,7 +23,7 @@ resource "kubernetes_deployment" "example_deployment_ing_app1" {
         container {
           image = "hashicorp/http-echo"
           name  = "simple-steel-eye-app1"
-          args  = ["-text=Hello I am using an Loadbalancer and an ingress"]
+          args  = ["-text=Hello I am using an Loadbalancer + ingress  + app1"]
         }
       }
     }
@@ -55,7 +55,7 @@ resource "kubernetes_deployment" "example_deployment_ing_app2" {
         container {
           image = "hashicorp/http-echo"
           name  = "simple-steel-eye-app2"
-          args  = ["-text=Hello I am using an Loadbalancer and an ingress"]
+          args  = ["-text=Hello I am using an Loadbalancer + ingress + app2"]
         }
       }
     }
