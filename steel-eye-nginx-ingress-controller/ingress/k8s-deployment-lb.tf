@@ -22,8 +22,8 @@ resource "kubernetes_deployment" "example_deployment_lb" {
       spec {
         container {
           image = "hashicorp/http-echo"
-          name  = "simple-steel-eye-app2"
-          args  = ["-text=Hello from my LoadBalancer - simple-steel-eye-app2"]
+          name  = "simple-steel-eye"
+          args  = ["-text=Hello from my LoadBalancer - simple-steel-eye"]
         }
       }
     }
