@@ -41,14 +41,14 @@ resource "kubernetes_deployment" "example_deployment_ing_app1" {
 
     selector {
       match_labels = {
-        app = "steel-eye-app-ing"
+        app = "steel-eye-app-ing-app1"
       }
     }
 
     template {
       metadata {
         labels = {
-          app = "steel-eye-app-ing"
+          app = "steel-eye-app-ing-app1"
         }
       }
 
@@ -72,14 +72,14 @@ resource "kubernetes_deployment" "example_deployment_ing_app2" {
 
     selector {
       match_labels = {
-        app = "steel-eye-app-ing"
+        app = "steel-eye-app-ing-app2"
       }
     }
 
     template {
       metadata {
         labels = {
-          app = "steel-eye-app-ing"
+          app = "steel-eye-app-ing-app2"
         }
       }
 
