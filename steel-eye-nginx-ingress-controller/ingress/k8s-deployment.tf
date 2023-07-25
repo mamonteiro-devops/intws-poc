@@ -33,7 +33,7 @@ resource "kubernetes_deployment" "example_deployment_lb" {
 
 resource "kubernetes_deployment" "example_deployment_ing_app1" {
   metadata {
-    name = "deployment-ing"
+    name = "deployment-ing-app1"
   }
 
   spec {
@@ -64,7 +64,7 @@ resource "kubernetes_deployment" "example_deployment_ing_app1" {
 }
 resource "kubernetes_deployment" "example_deployment_ing_app2" {
   metadata {
-    name = "deployment-ing"
+    name = "deployment-ing-app2"
   }
 
   spec {

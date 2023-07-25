@@ -3,12 +3,11 @@ resource "kubernetes_ingress_v1" "hello_kubernetes" {
   metadata {
     name = "hello-kubernetes"
     annotations = {
-      "alb.ingress.kubernetes.io/scheme"     = "internet-facing"
+      "alb.ingress.kubernetes.io/scheme"               = "internet-facing"
       "kubernetes.io/ingress.class"          = "alb"
     }
   }
   spec {
-    ingress_class_name = "nginx"
     rule {
       http {
         path {
