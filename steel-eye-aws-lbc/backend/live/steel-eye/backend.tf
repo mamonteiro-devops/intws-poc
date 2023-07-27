@@ -3,9 +3,9 @@ terraform {
 
   backend "s3" {
     region         = "us-east-1"
-    bucket         = "987728975796-us-east-1-steel-eye-terraform-state"
-    key            = "terraform.tfstate"
-    dynamodb_table = "987728975796-us-east-1-steel-eye-terraform-state-lock"
+    bucket         = "steel-eye-terraform-on-aws-eks"
+    key            = "dev/eks-cluster/terraform.tfstate"
+    dynamodb_table = "steel-eye-terraform-on-aws-eks-terraform-state-lock"
     profile        = ""
     role_arn       = ""
     encrypt        = "true"

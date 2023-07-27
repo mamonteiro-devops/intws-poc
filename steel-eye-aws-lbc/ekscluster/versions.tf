@@ -9,12 +9,12 @@ terraform {
   }
   # Adding Backend as S3 for Remote State Storage
   backend "s3" {
-    bucket = "terraform-on-aws-eks"
+    bucket = "steel-eye-terraform-on-aws-eks"
     key    = "dev/eks-cluster/terraform.tfstate"
     region = "us-east-1"
 
     # For State Locking
-    dynamodb_table = "dev-ekscluster"
+    dynamodb_table = "steel-eye-terraform-on-aws-eks-terraform-state-lock"
   }
 }
 

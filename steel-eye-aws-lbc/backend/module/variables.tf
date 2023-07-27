@@ -1,9 +1,6 @@
 variable "stage" {
 }
 
-variable "aws_account_id" {
-  
-}
 
 variable "default_tag_value_kn_ccc_environment_stage" {
   // @see: https://wiki.int.kn/display/CCC/Tagging+strategies#Taggingstrategies-Environmenttags

@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "demo" {
-    bucket = "steel-eye-nginx-ingress-controller-terraform-state"
+    bucket = "steel-eye-terraform-on-aws-eks"
 
     tags = {
         Name = "S3 Remote Terraform State Store"
