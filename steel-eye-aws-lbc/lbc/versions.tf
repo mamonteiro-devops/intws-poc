@@ -1,4 +1,10 @@
-# Terraform Settings Block
+data "aws_caller_identity" "current" {}
+
+locals {
+  account_id = data.aws_caller_identity.current.account_id
+
+
+  # Terraform Settings Block
 terraform {
   required_version = ">= 1.0.0"
   required_providers {
@@ -19,14 +25,18 @@ terraform {
       version = "~> 2.20"
     }      
   }
+
+  }
+
+
   # Adding Backend as S3 for Remote State Storage
   backend "s3" {
-    bucket = "steel-eye-terraform-on-aws-eks"
-    key    = "dev/aws-lbc/terraform.tfstate"
+    bucket = "${local.account_id}-us-east-1-steel-eye-terraform-state"
+    key    = "terraform.tfstate"
     region = "us-east-1"
 
     # For State Locking
-    dynamodb_table = "steel-eye-terraform-on-aws-eks-terraform-state-lock"
+    dynamodb_table = "${local.account_id}-us-east-1-steel-eye-terraform-state-lock"
   }
 
 

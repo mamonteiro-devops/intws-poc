@@ -1,5 +1,5 @@
 resource "aws_dynamodb_table" "terraform-lock" {
-    name           = "steel-eye-terraform-on-aws-eks-terraform-state-lock"
+    name           = "${local.account_id}-us-east-1-steel-eye-terraform-state-lock"
     read_capacity  = 5
     write_capacity = 5
     hash_key       = "LockID"

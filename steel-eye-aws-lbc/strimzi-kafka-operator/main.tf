@@ -1,5 +1,5 @@
 resource "helm_release" "strimzi" {
-  chart = "strimzi-kafka-operator"
+  chart = "./charts/strimzi-kafka-operator"
   name = "strimzi"
   namespace = "kafka"
   repository = "./"

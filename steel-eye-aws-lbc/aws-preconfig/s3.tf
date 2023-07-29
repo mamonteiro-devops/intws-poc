@@ -1,5 +1,9 @@
+locals{
+    account_id = data.aws_caller_identity.current.account_id
+}
+
 resource "aws_s3_bucket" "demo" {
-    bucket = "steel-eye-terraform-on-aws-eks"
+    bucket = "${local.account_id}-us-east-1-steel-eye-terraform-state"
 
     tags = {
         Name = "S3 Remote Terraform State Store"
