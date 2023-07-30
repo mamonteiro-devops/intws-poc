@@ -1,4 +1,3 @@
-data "aws_caller_identity" "current" {}
 
 locals {
   account_id = data.aws_caller_identity.current.account_id
@@ -15,12 +14,12 @@ terraform {
   }
   # Adding Backend as S3 for Remote State Storage
   backend "s3" {
-    bucket = "${local.account_id}-us-east-1-steel-eye-terraform-state"
+    bucket = "122020192764-steel-eye-terraform"
     key    = "terraform.tfstate"
     region = "us-east-1"
 
     # For State Locking
-    dynamodb_table = "${local.account_id}-us-east-1-steel-eye-terraform-state-lock"
+    dynamodb_table = "122020192764-steel-eye-terraform-lock"
   }
 }
 

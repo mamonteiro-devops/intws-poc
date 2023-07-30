@@ -1,6 +1,6 @@
 provider "aws" {
   region = "us-east-1"
-  allowed_account_ids = [var.aws_account_id] # ensure that each stage is deployed to the right AWS account
+  #allowed_account_ids = [var.aws_account_id] # ensure that each stage is deployed to the right AWS account
 
   default_tags {
     tags = {
