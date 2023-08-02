@@ -1,6 +1,4 @@
 ## Instructions 
-ft1
-
 ft2
 ```
     export AWS_ACCESS_KEY_ID=<ACCESS_KEY>
