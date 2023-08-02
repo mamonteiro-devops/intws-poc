@@ -1,6 +1,4 @@
-## Instructions 
-ft2
-ft1
+## Instructions
 ```
     export AWS_ACCESS_KEY_ID=<ACCESS_KEY>
     export AWS_SECRET_ACCESS_KEY=<SECRET_KEY>
